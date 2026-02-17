@@ -1,21 +1,27 @@
-#include <stdio.h>
+import java.util.Scanner;
 
-int main() {
-    float baseCost, extraGB, ratePerGB, taxPercent;
-    float extraCharge, total, finalBill;
+public class Main {
+    public static void main(String[] args) {
 
-    scanf("%f %f %f %f", &baseCost, &extraGB, &ratePerGB, &taxPercent);
+        Scanner sc = new Scanner(System.in);
 
-    extraCharge = extraGB * ratePerGB;
+        double baseCost, extraGB, ratePerGB, tax;
+        double totalBill;
 
+        baseCost = sc.nextDouble();
+        extraGB = sc.nextDouble();
+        ratePerGB = sc.nextDouble();
+        tax = sc.nextDouble();
 
-    total = baseCost + extraCharge;
+        double extraCharge = extraGB * ratePerGB;
 
+       
+        double total = baseCost + extraCharge;
 
-    finalBill = total + (total * taxPercent / 100);
+    
+        totalBill = total + (total * tax / 100);
+        System.out.println("Total Bill = " + totalBill);
 
-
-    printf("Total Bill = %.2f", finalBill);
-
-    return 0;
+        sc.close();
+    }
 }
